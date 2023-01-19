@@ -230,6 +230,7 @@ export async function getOpenAIAuth({
       await checkForChatGPTAtCapacity(page, { timeoutMs })
     }
 
+    await delay(20000)
     const pageCookies = await page.cookies()
     const cookies = pageCookies.reduce(
       (map, cookie) => ({ ...map, [cookie.name]: cookie }),
